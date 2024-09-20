@@ -9,8 +9,8 @@ RUN npm cache clean --force
 #RUN  yarn add chalk redis-url mariadb  && npm install pm2 npm-run-all -g
 #RUN yarn add ts-node-dev --dev
 RUN  yarn install -y 
-ENV NODE_ENV production
-ENV ENABLE_OVERCOMMIT_MEMORY true
+ENV NODE_ENV =production
+ENV ENABLE_OVERCOMMIT_MEMORY =true
 #ENV MONGO_URI 
 EXPOSE 8800 5173 9001
 
