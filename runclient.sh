@@ -1,3 +1,4 @@
 #!/usr/bin/bash
 
-cd client && npm run dev
+cd client && && npm i && \
+npm run dev
