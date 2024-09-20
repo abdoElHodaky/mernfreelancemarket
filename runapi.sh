@@ -1,4 +1,4 @@
 #!/usr/bin/bash
 
-cd ../api && npm i && \
+cd api && npm i && \
 node server.js
