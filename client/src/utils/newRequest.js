@@ -2,7 +2,7 @@ import axios from "axios";
 
 const newRequest = axios.create({
   baseURL: "/api/",
-  withCredentials: true,
+ // withCredentials: true,
 });
 
 export default newRequest;
