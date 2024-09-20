@@ -1,3 +1,3 @@
 #!/usr/bin/bash
 
-cd api && node server.js
+cd ../api && node server.js
