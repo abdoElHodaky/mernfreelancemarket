@@ -11,7 +11,7 @@ RUN npm cache clean --force
 RUN  yarn install -y 
 ENV NODE_ENV=production
 ENV ENABLE_OVERCOMMIT_MEMORY=true
-#ENV MONGO_URI 
+ENV MONGO_URI=mongodb+srv://abdoarh36:TyWF4ABOefQhJFbP@cluster0.bc7sxu7.mongodb.net/mernfreelancemarket
 EXPOSE 8800 5173 9001
 
 CMD ["/usr/bin/supervisord","-c","./supervisord.conf"]
