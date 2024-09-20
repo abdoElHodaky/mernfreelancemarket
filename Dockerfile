@@ -12,6 +12,6 @@ RUN  yarn install -y
 ENV NODE_ENV production
 ENV ENABLE_OVERCOMMIT_MEMORY true
 #ENV MONGO_URI 
-EXPOSE 8800 5173 9001
+#EXPOSE 8800 5173 9001
 
 CMD ["/usr/bin/supervisord","-c","./supervisord.conf"]
