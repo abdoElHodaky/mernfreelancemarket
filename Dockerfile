@@ -1,4 +1,4 @@
-FROM node:16-alpine
+FROM node:18-alpine
 #WORKDIR /app
 COPY . .
 #COPY supervisord.conf /etc/supervisord.conf
@@ -14,6 +14,7 @@ ENV NODE_ENV=production
 ENV ENABLE_OVERCOMMIT_MEMORY=true
 ENV MONGO_URI=mongodb+srv://abdoarh36:TyWF4ABOefQhJFbP@cluster0.bc7sxu7.mongodb.net/mernfreelancemarket
 RUN cd client && npm install --force && \
+npm update vite &&\
 npm run build && mkdir ../server/server/public && \
 cp -r ./dist/ ../server/public/ && \
 cd ../api/ && npm install 
