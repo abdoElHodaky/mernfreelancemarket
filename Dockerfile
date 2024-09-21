@@ -12,7 +12,7 @@ RUN chmod 777 .
 #ENV APP_URL=0.0.0.0
 ENV ENABLE_OVERCOMMIT_MEMORY=true
 #ENV MONGO_URI=mongodb+srv://abdoarh36:TyWF4ABOefQhJFbP@cluster0.bc7sxu7.mongodb.net/mernfreelancemarket
-RUN mkdir api/public
+RUN mkdir -p api/public
 RUN cd client && touch yarn.lock && \
 yarn add -D vite-plugin-node-polyfills && \
 npm run build && \
