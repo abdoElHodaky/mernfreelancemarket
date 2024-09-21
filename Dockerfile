@@ -16,7 +16,7 @@ RUN mkdir -p api/public
 RUN cd client && touch yarn.lock && \
 yarn add -D vite-plugin-node-polyfills && \
 npm run build && \
-cp -r dist/* ../api/public && \
+mv -r /dist/* ../api/public && \
 cd ../api/ && npm install
 EXPOSE 8800 
 CMD ["node","api/server.js"]
