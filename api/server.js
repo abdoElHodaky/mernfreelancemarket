@@ -33,9 +33,9 @@ app.use(express.static("public"));
 
 app.use((req, res, next) => {
   fs.readdir(path.join(process.cwd(), "public")).then(d=>{
-    res.json(d)
+  console.log(d)
   }).catch(console.log)
-  res.end()
+  res.end("56")
 //  res.sendFile(path.join(process.cwd(), "public","index.html"));
 });
 app.use("/api/auth", authRoute);
