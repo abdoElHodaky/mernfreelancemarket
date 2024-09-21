@@ -1,4 +1,6 @@
 #!/usr/bin/bash
 
-cd api && npm i && \
+sh runclient.sh
+
+cd ../api && npm i && \
 node server.js
