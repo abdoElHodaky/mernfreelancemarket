@@ -27,7 +27,7 @@ export const connect = async () => {
 app.use(cors("*"/*{ origin: "http://localhost:5173", credentials: true }*/));
 app.use(express.json());
 app.use(cookieParser());
-app.use(express.static('public'))
+app.use(express.static(path.join(process.cwd(), 'public')))
 app.get("/",(req,res)=>{
   return res.sendFile(path.join(process.cwd(), 'public', 'index.html'));
 })
