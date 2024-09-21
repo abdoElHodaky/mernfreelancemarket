@@ -29,7 +29,8 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(express.static(path.join(process.cwd(), 'public')))
 app.get("/",(req,res)=>{
-  return res.sendFile(path.join(process.cwd(), 'public', 'index.html'));
+  res.end(__dirname)
+//  return res.sendFile(path.join(process.cwd(), 'public', 'index.html'));
 })
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
