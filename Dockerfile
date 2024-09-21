@@ -13,8 +13,9 @@ RUN  yarn set version 3.2.0
 ENV NODE_ENV=production
 ENV ENABLE_OVERCOMMIT_MEMORY=true
 ENV MONGO_URI=mongodb+srv://abdoarh36:TyWF4ABOefQhJFbP@cluster0.bc7sxu7.mongodb.net/mernfreelancemarket
-RUN cd client && yarn install --force && \
-yarn run build && mkdir ../server/server/public && \
+RUN cd client && yarn install && \
+yarn add --dev vite-plugin-node-polyfills && yarn run build 
+RUN mkdir ../server/server/public && \
 cp -r ./dist/ ../server/public/ && \
 cd ../api/ && npm install 
 EXPOSE 8800 
