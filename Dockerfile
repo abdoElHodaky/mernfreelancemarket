@@ -7,6 +7,7 @@ RUN apk add --no-cache tzdata  sqlite-dev postgresql-dev mysql-dev protobuf prot
 RUN rm -rf package-lock.json && mkdir /var/log/supervisor/
 RUN npm cache clean --force
 RUN  npm install pm2 npm-run-all vite -g
+RUN ln -s /usr/local/lib/node_modules/ /*/node_modules 
 RUN chmod 777 .
 RUN  yarn install -y 
 ENV NODE_ENV=production
