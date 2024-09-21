@@ -1,5 +1,5 @@
 FROM node:18-alpine
-#WORKDIR /app
+WORKDIR /app
 COPY . .
 #COPY supervisord.conf /etc/supervisord.conf
 
