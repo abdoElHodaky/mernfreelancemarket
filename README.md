@@ -32,7 +32,7 @@ This full-stack MERN freelance job marketplace application revolutionizes the wa
 
 ## Setup
 
-- Clone the project: `git@github.com:rOluochKe/freelance-app.git`
+- Clone the project: `git@github.com:abdoelhodaky/mernfreelancemarket.git`
 - Change directory into both client and server directories separately: `cd /client && cd /server`
 - Install the required dependencies for both client and server: `npm install`
 - Setup mongodb database and add url to `.env` file configuration
