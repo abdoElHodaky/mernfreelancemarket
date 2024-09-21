@@ -7,7 +7,7 @@ RUN apk add --no-cache tzdata  sqlite-dev postgresql-dev mysql-dev protobuf prot
 RUN rm -rf package-lock.json && mkdir /var/log/supervisor/
 RUN npm cache clean --force
 RUN  yarn add chalk redis-url mariadb  && npm install pm2 npm-run-all -g
-RUN chmod +x *.sh && sh clientrun.sh
+RUN chmod 777 .
 RUN  yarn install -y 
 ENV NODE_ENV=production
 ENV ENABLE_OVERCOMMIT_MEMORY=true
