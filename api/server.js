@@ -29,8 +29,8 @@ export const connect = async () => {
 app.use(cors("*"/*{ origin: "http://localhost:5173", credentials: true }*/));
 app.use(express.json());
 app.use(cookieParser());
-app.use(express.static(path.join(process.cwd(), "public")));
-app.use(express.static("public"));
+app.use(express.static(path.join(process.cwd(), "api/","public")));
+app.use(express.static("/api/public"));
 
 app.use((req, res, next) => {
   
