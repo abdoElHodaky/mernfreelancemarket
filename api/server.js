@@ -11,7 +11,7 @@ import authRoute from "./routes/auth.route.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import path from 'path'
-const app = express();
+export const app = express();
 dotenv.config();
 mongoose.set("strictQuery", true);
 
@@ -44,7 +44,4 @@ app.use((err, req, res, next) => {
   return res.status(errorStatus).send(errorMessage);
 });
 
-app.listen(8800, () => {
-  connect();
-  console.log("Backend server is running!");
-});
+
