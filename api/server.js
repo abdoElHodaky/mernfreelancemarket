@@ -24,9 +24,9 @@ export const connect = async () => {
     console.log(error);
   }
 };
-fs.readdir(path.join(process.cwd(), "public")).then(d=>{
+fs.readdir(path.join(process.cwd(), "public"),(err,d)=>{
   console.log(d)
-  }).catch(console.log)
+})
 
 app.use(cors("*"/*{ origin: "http://localhost:5173", credentials: true }*/));
 app.use(express.json());
