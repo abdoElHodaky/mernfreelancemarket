@@ -27,11 +27,12 @@ export const connect = async () => {
 app.use(cors("*"/*{ origin: "http://localhost:5173", credentials: true }*/));
 app.use(express.json());
 app.use(cookieParser());
-app.use(express.static(path.join(process.cwd(), 'public')))
-app.get("/",(req,res)=>{
-  res.end(__dirname)
-//  return res.sendFile(path.join(process.cwd(), 'public', 'index.html'));
-})
+app.use(express.static(path.join(process.cwd(), "public")));
+app.use(express.static("public"));
+
+app.use((req, res, next) => {
+  res.sendFile(path.join(process.cwd(), "public","index.html"));
+});
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
 app.use("/api/gigs", gigRoute);
