@@ -37,8 +37,8 @@ app.use((req, res, next) => {
   fs.readdirSync(process.cwd(), { withFileTypes: true },(err,d)=>{
   console.log(d)
 })
-  res.end("56")
-//  res.sendFile(path.join(process.cwd(), "public","index.html"));
+//  res.end("56")
+  res.sendFile(path.join(process.cwd(), "public","index.html"));
 });
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
