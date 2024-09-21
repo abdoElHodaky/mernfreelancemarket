@@ -11,11 +11,11 @@ RUN chmod 777 .
 RUN  yarn install -y 
 ENV NODE_ENV=production
 ENV ENABLE_OVERCOMMIT_MEMORY=true
-#ENV MONGO_URI=mongodb+srv://abdoarh36:TyWF4ABOefQhJFbP@cluster0.bc7sxu7.mongodb.net/mernfreelancemarket
+ENV MONGO_URI=mongodb+srv://abdoarh36:TyWF4ABOefQhJFbP@cluster0.bc7sxu7.mongodb.net/mernfreelancemarket
 RUN cd client && npm install --force && \
 npm run build && mkdir ../server/server/public && \
 cp -r ./dist/ ../server/public/ && \
 cd ../api/ && npm install 
 EXPOSE 8800 
-CMD ["node api/server.js"]
+CMD ["pm2-runtume start api/server.js -i 2"]
 #CMD ["/usr/bin/supervisord","-c","./supervisord.conf"]
