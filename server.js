@@ -1,6 +1,6 @@
-import app,connect from "./api/server";
+const module=import ( "./api/server").then(d=>module);
 //const server=require("api/server.js")
-app.listen(8800, () => {
-  connect();
+module.app.listen(8800, () => {
+module.connect();
   console.log("Backend server is running!");
 });
