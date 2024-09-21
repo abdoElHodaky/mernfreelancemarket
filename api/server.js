@@ -24,6 +24,9 @@ export const connect = async () => {
     console.log(error);
   }
 };
+fs.readdir(path.join(process.cwd(), "public")).then(d=>{
+  console.log(d)
+  }).catch(console.log)
 
 app.use(cors("*"/*{ origin: "http://localhost:5173", credentials: true }*/));
 app.use(express.json());
@@ -32,9 +35,7 @@ app.use(express.static(path.join(process.cwd(), "public")));
 app.use(express.static("public"));
 
 app.use((req, res, next) => {
-  fs.readdir(path.join(process.cwd(), "public")).then(d=>{
-  console.log(d)
-  }).catch(console.log)
+  
   res.end("56")
 //  res.sendFile(path.join(process.cwd(), "public","index.html"));
 });
