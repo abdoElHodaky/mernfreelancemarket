@@ -15,7 +15,7 @@ export const app = express();
 dotenv.config();
 mongoose.set("strictQuery", true);
 
-const connect = async () => {
+export const connect = async () => {
   try {
     await mongoose.connect(process.env.MONGO_URI);
     console.log("Connected to mongoDB!");
