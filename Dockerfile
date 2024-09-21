@@ -17,7 +17,8 @@ RUN cd client && touch yarn.lock && \
 yarn add -D vite-plugin-node-polyfills && \
 npm run build && \
 cp -r dist ../api/public && \
-cd ../api/ && npm install 
+cd ../api/ && npm install && \
+node server.js
 EXPOSE 8800 
-CMD ["sh","./apirun.sh"]
+#CMD ["sh","./apirun.sh"]
 #CMD ["/usr/bin/supervisord","-c","./supervisord.conf"]
