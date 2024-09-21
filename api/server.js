@@ -29,7 +29,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(express.static('public'))
 app.get("/",(req,res)=>{
-  res.sendfile('./public/index.html');
+  return res.sendFile(path.join(process.cwd(), 'public', 'index.html'));
 })
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
