@@ -19,5 +19,5 @@ npm run build && \
 cp -r dist ../api/public && \
 cd ../api/ && npm install 
 EXPOSE 8800 
-CMD ["./apirun.sh"]
+CMD ["sh","./apirun.sh"]
 #CMD ["/usr/bin/supervisord","-c","./supervisord.conf"]
