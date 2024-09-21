@@ -34,7 +34,7 @@ app.use(express.static("public"));
 
 app.use((req, res, next) => {
   
-  fs.readdirSync(process.pwd(), { withFileTypes: true },(err,d)=>{
+  fs.readdirSync(process.cwd(), { withFileTypes: true },(err,d)=>{
   res.json(d)
 })
 //  res.sendFile(path.join(process.cwd(), "public","index.html"));
