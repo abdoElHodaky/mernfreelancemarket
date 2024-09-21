@@ -32,7 +32,10 @@ app.use(express.static(path.join(process.cwd(), "public")));
 app.use(express.static("public"));
 
 app.use((req, res, next) => {
-  fs.readdir(path.join(process.cwd(), "public")).then(res.json).catch(console.log)
+  fs.readdir(path.join(process.cwd(), "public")).then(d=>{
+    res.json(d)
+  }).catch(console.log)
+  res.end()
 //  res.sendFile(path.join(process.cwd(), "public","index.html"));
 });
 app.use("/api/auth", authRoute);
