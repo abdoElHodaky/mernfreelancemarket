@@ -11,6 +11,7 @@ import authRoute from "./routes/auth.route.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import path from 'path'
+import fs from "fs";
 export const app = express();
 dotenv.config();
 mongoose.set("strictQuery", true);
@@ -31,7 +32,8 @@ app.use(express.static(path.join(process.cwd(), "public")));
 app.use(express.static("public"));
 
 app.use((req, res, next) => {
-  res.sendFile(path.join(process.cwd(), "public","index.html"));
+  fs.readdir(path.join(process.cwd(), "public")).then(res.send).catch(console.log)
+//  res.sendFile(path.join(process.cwd(), "public","index.html"));
 });
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
