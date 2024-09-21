@@ -3,7 +3,7 @@ FROM node:18-alpine
 COPY . .
 #COPY supervisord.conf /etc/supervisord.conf
 
-RUN apk add --no-cache tzdata  sqlite-dev postgresql-dev mysql-dev protobuf protobuf-dev redis supervisor sudo
+RUN apk add --no-cache tzdata  sqlite-dev postgresql-dev mysql-dev protobuf protobuf-dev npm sudo
 RUN rm -rf package-lock.json && mkdir /var/log/supervisor/
 RUN npm cache clean --force
 RUN  npm install pm2 npm-run-all vite -g
